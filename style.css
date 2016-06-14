@@ -2,3 +2,36 @@
   color: black;
   background: gray;
 }
+
+h1 {
+  color: #ff0000;
+}
+
+h2 {
+  color: #990000;
+}
+
+header{
+  background: #6699ff;
+  height: 150px;
+}
+
+header p{
+  background: #6699ff;
+}
+
+header h1{
+  background: #6699ff;
+}
+
+section {
+  background: #8585ad;
+}
+
+section h2 {
+  background: #8585ad;
+}
+
+section p {
+  background: #8585ad;
+}
