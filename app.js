@@ -90,4 +90,34 @@ else {
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 
+//Q6: Guess at what age Derek got his first compuer of his own?  Answer: 12.  User gets 4 guesses and the question should respond with "too high" or "too low" to the user's guesses so they can narrow in on the right number.
+var answer6 = parseInt(prompt('At what age did Derek get his first computer of his own? He\'s 33 now so guess a number between 0 and 33, you have 4 tries to get the right answer!'));
+var question6CorrectAnswer = 12;
+
+//i = user guess count
+while (i < 4){
+  //If guess right tell the user so
+  if (answer6 === question6CorrectAnswer){
+    i++;
+    alert('You\'re right, congratulations!  And it only took you ' + i + ' guesses!');
+    break;
+  }
+  //If guess is too high tell the user "too high"
+  else if (answer6 > question6CorrectAnswer && question6CorrectAnswer < 34){
+    i++;
+    alert('Close but no cigar, your guess is too high.');
+  }
+  //If guess is too low tell the user "too low"
+  else if(answer6 < question6CorrectAnswer && question6CorrectAnswer > 0){
+    i++;
+    alert('Close but no cigar, your guess is too low.');
+  }
+  //If we get here the user probably entered something that wasn't a number, tell them so
+  else{
+    i++;
+    alert('Your guess wasn\'t between 0 and 33 or wasn\'t a number, but you still used up a guess.  Try again!');
+  }
+}
+//Q7: Will go here
+
 alert('Thanks for playing my get-to-know-me game ' + userName + ', you got ' + userAnswerTotal + ' questions right out of 5.');
