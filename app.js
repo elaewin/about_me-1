@@ -94,10 +94,12 @@ else {
 var question6CorrectAnswer = 12;
 
 //number of times the user guessed the answer
-question6GuessCount = 0;
+var question6GuessCount = 0;
 do {
+  console.log('message to myself');
   question6GuessCount++;
   var answer6 = parseInt(prompt('At what age did Derek get his first computer of his own? He\'s 33 now so guess a number between 0 and 33, you have 4 tries to get the right answer!'));
+  console.log('The user answered ' + answer6 + ' to question 6.');
   //If the user guesses the right answer tell them so
   if (answer6 === question6CorrectAnswer){
     alert('You\'re right, congratulations!  And it only took you ' + question6GuessCount + ' guesses!');
@@ -122,23 +124,39 @@ while (question6GuessCount < 4);
 if (question6GuessCount >= 4){
   alert('Sorry you\'re out of guesses, you got this question wrong.');
 }
+
 //Q7: This question will ask the user to name one of my Top Six Favorite Sodas, which are the top 6 from my index page.  They get 6 tries to guess the right answer.  At the end, whether they got the answer right or not (maybe two different prompts?) show the user the array.  Number them maybe?
 
 var question7GuessCount = 0;
 var question7CorrectAnswer = ['Full Throttle','Wild Cherry Pepsi','Red Bull','Doctor Pepper','Mountain Dew','Barq\'s Root Beer'];
 
-do{
-var answer7 = prompt('Guess one of Derek\'s Top Six Faorite Sodas or Energy Drinks').toLowerCase();
-  //compare answer7 to the array here, if they get it right tell them so
-  if (answer7 === question7CorrectAnswer){
-    alert('You guessed right, congratulations!');
+for(var q7i = 0 ; q7i < 6 ; q7i++){
+//declare a variable to break out of the for loop early in the event of a correct answer
+  var q7broke = false;
+  if (q7broke === true){
+    break;
   }
   else{
-    alert('Sorry, you guessed wrong. Try again!');
+    var answer7 = prompt('Guess one of Derek\'s Top Six Faorite Sodas or Energy Drinks').toLowerCase();
+    console.log('The user answered ' + answer7 + ' to question 7.');
+    //compare answer7 to the array here, if they get it right tell them so
+    for (var q7ArrayCompare = 0 ; q7ArrayCompare < (question7CorrectAnswer.length); q7ArrayCompare++){
+      if (answer7 === (question7CorrectAnswer[q7ArrayCompare]).toLowerCase()){
+        alert('You guessed right, congratulations! The correct answers were ' + question7CorrectAnswer + '.');
+        userCorrectAnswerTotal++;
+        q7broke = true;
+      }
+      else if(question7GuessCount > 6){
+        alert('Sorry, you\'re out of guesses. The correct answers were ' + question7CorrectAnswer + '.');
+      }
+      else{
+        alert('Sorry, you guessed wrong. Try again!');
+      }
+    }
   }
 }
-while (question7GuessCount < 6);
 
 //This alert greets the user by name and lets them know how many questions out of the total they got correct
 
-alert('Thanks for playing my get-to-know-me game ' + userName + ', you got ' + userCorrectAnswerTotal + ' questions right out of 5.');
+alert('Thanks for playing my get-to-know-me game ' + userName + ', you got ' + userCorrectAnswerTotal + ' questions right out of 7.');
+console.log('The user got ' + userCorrectAnswerTotal + ' questions right out of 7.');
