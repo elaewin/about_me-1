@@ -93,18 +93,13 @@ else {
 //Q6: Guess at what age Derek got his first compuer of his own?  Answer: 12.  User gets 4 guesses and the question should respond with "too high" or "too low" to the user's guesses so they can narrow in on the right number.
 var question6CorrectAnswer = 12;
 
-//i = number of times the user guessed the answer
-question6GuessCount = -1;
+//number of times the user guessed the answer
+question6GuessCount = 0;
 do {
   question6GuessCount++;
-while (question6GuessCount < 4){
   var answer6 = parseInt(prompt('At what age did Derek get his first computer of his own? He\'s 33 now so guess a number between 0 and 33, you have 4 tries to get the right answer!'));
   //If the user guesses the right answer tell them so
-  if(question6GuessCount === 4){
-    alert('Sorry you\'re out of guesses, you got this question wrong.');
-  }
-  else if (answer6 === question6CorrectAnswer){
-    question6GuessCount++;
+  if (answer6 === question6CorrectAnswer){
     alert('You\'re right, congratulations!  And it only took you ' + question6GuessCount + ' guesses!');
     userCorrectAnswerTotal++;
     break;
@@ -122,10 +117,27 @@ while (question6GuessCount < 4){
     alert('Your guess wasn\'t between 0 and 33 or wasn\'t a number, but you still used up a guess.  Try again!');
   }
 }
-//Q7: Will go here
+while (question6GuessCount < 4);
+//If the user ran out of guesses, after telling they're prompted above why they were wrong, this prompt informs them they ran out
+if (question6GuessCount >= 4){
+  alert('Sorry you\'re out of guesses, you got this question wrong.');
+}
+//Q7: This question will ask the user to name one of my Top Six Favorite Sodas, which are the top 6 from my index page.  They get 6 tries to guess the right answer.  At the end, whether they got the answer right or not (maybe two different prompts?) show the user the array.  Number them maybe?
 
 var question7GuessCount = 0;
 var question7CorrectAnswer = ['Full Throttle','Wild Cherry Pepsi','Red Bull','Doctor Pepper','Mountain Dew','Barq\'s Root Beer'];
+
+do{
+var answer7 = prompt('Guess one of Derek\'s Top Six Faorite Sodas or Energy Drinks').toLowerCase();
+  //compare answer7 to the array here, if they get it right tell them so
+  if (answer7 === question7CorrectAnswer){
+    alert('You guessed right, congratulations!');
+  }
+  else{
+    alert('Sorry, you guessed wrong. Try again!');
+  }
+}
+while (question7GuessCount < 6);
 
 //This alert greets the user by name and lets them know how many questions out of the total they got correct
 
