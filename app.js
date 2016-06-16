@@ -7,6 +7,7 @@ function getUserName() {
   //collect userName for use in the greeting
   var userName = prompt('Hi user! Welcome to my About Me page. What is your name?');
   alert ('Welcome ' + userName + ', glad you\'re here.');
+  return userName;
 }
 
 //This varaiable stores the # of questions the user gets right and will be displayed at the end
@@ -138,14 +139,16 @@ function question7() {
   while(question7GuessCount < 6 && q7UserCorrect === false) {
     var answer7 = prompt('Guess one of Derek\'s Top Five Faorite Sodas or Energy Drinks').toLowerCase();
     console.log('The user answered ' + answer7 + ' to question 7.');
-    for(var i = 0 ; question7CorrectAnswers.length < 6 ; i++) {
-      if(answer7 === question7CorrectAnswers[i]) {
+    for(var i = 0 ; i < question7CorrectAnswers.length ; i++) {
+      if(answer7 === question7CorrectAnswers[i].toLowerCase()) {
         q7UserCorrect = true;
         userCorrectAnswerTotal++;
       }
     }
-    question7GuessCount++;
-    alert('Sorry, you guessed wrong. Try again!');
+    if(q7UserCorrect === false) {
+      alert('Sorry, you guessed wrong. Try again!');
+      question7GuessCount++;
+    }
   }
   if(q7UserCorrect === true) {
     alert('You guessed right, congratulations! The correct answers were ' + question7CorrectAnswers + '.');
@@ -154,7 +157,7 @@ function question7() {
   }
 }
 
-getUserName();
+var userName = getUserName();
 question1();
 question2();
 question3();
