@@ -17,12 +17,10 @@ console.log('The user answered ' + answer1 + ' to question 1.');
 
 if (answer1 === 'yes' || answer1 === 'y'){
   alert('Sorry that\'s incorrect, Derek likes ponies and bubblegum.');
-}
-else if(answer1 === 'no' || answer1 === 'n'){
+} else if(answer1 === 'no' || answer1 === 'n'){
   alert('You\'re right!  Derek actually likes ponies and bubblegum.');
   userCorrectAnswerTotal++;
-}
-else{
+} else{
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 
@@ -34,11 +32,9 @@ console.log('The user answered ' + answer2 + ' to question 2.');
 if (answer2 === 'yes' || answer2 === 'y'){
   alert('You\'re right, Derek\'s favorite color is green!');
   userCorrectAnswerTotal++;
-}
-else if(answer2 === 'no' || answer2 === 'n'){
+} else if(answer2 === 'no' || answer2 === 'n'){
   alert('Sorry you\'re wrong, Derek\'s favorite color is actually green.');
-}
-else{
+} else {
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 
@@ -49,12 +45,10 @@ console.log('The user answered ' + answer3 + ' to question 3.');
 
 if (answer3 === 'yes' || answer3 === 'y'){
   alert('Sorry you\'re wrong, Derek likes rock and ice climing, not bouldering.');
-}
-else if(answer3 === 'no' || answer3 === 'n'){
+} else if(answer3 === 'no' || answer3 === 'n'){
   alert('You\'re right, Derek likes rock and ice climbing instead.');
   userCorrectAnswerTotal++;
-}
-else{
+} else {
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 
@@ -66,11 +60,9 @@ console.log('The user answered ' + answer4 + ' to question 4.');
 if (answer4 === 'yes' || answer4 === 'y'){
   alert('You\'re right, Derek does like computer gaming!');
   userCorrectAnswerTotal++;
-}
-else if (answer4 === 'no' || answer4 === 'n'){
+} else if(answer4 === 'no' || answer4 === 'n'){
   alert ('Sorry you\'re wrong, Derek does like computer gaming.');
-}
-else{
+} else {
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 
@@ -79,14 +71,12 @@ var answer5 = prompt('Did Derek graduate from High School in 2004?').toLowerCase
 
 console.log('The user answered ' + answer5 + ' to question 5.');
 
-if (answer5 === 'yes' || answer5 === 'y'){
+if(answer5 === 'yes' || answer5 === 'y'){
   alert('Sorry you\'re wrong, Derek graduated from High School in 2003');
-}
-else if (answer5 === 'no' || answer5 === 'n'){
+} else if(answer5 === 'no' || answer5 === 'n'){
   alert('You\'re right, Derek graduated in 2003!');
   userCorrectAnswerTotal++;
-}
-else {
+} else {
   alert('Please enter a Yes or No (or Y/N) value for your answer.');
 }
 

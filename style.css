@@ -1,3 +1,7 @@
+* {
+  outline: 2px dashed orange;
+}
+
 body {
   color: black;
   background: gray;
