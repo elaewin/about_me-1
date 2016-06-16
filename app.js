@@ -96,7 +96,6 @@ var question6CorrectAnswer = 12;
 //number of times the user guessed the answer
 var question6GuessCount = 0;
 do {
-  console.log('message to myself');
   question6GuessCount++;
   var answer6 = parseInt(prompt('At what age did Derek get his first computer of his own? He\'s 33 now so guess a number between 0 and 33, you have 4 tries to get the right answer!'));
   console.log('The user answered ' + answer6 + ' to question 6.');
@@ -121,7 +120,7 @@ do {
 }
 while (question6GuessCount < 4);
 //If the user ran out of guesses, after telling they're prompted above why they were wrong, this prompt informs them they ran out
-if (question6GuessCount >= 4){
+if (question6GuessCount >= 5){
   alert('Sorry you\'re out of guesses, you got this question wrong.');
 }
 
@@ -129,10 +128,11 @@ if (question6GuessCount >= 4){
 
 var question7GuessCount = 0;
 var question7CorrectAnswer = ['Full Throttle','Wild Cherry Pepsi','Red Bull','Doctor Pepper','Mountain Dew','Barq\'s Root Beer'];
+var q7broke =  false;
 
 for(var q7i = 0 ; q7i < 6 ; q7i++){
 //declare a variable to break out of the for loop early in the event of a correct answer
-  var q7broke = false;
+  var displayed = 0;
   if (q7broke === true){
     break;
   }
@@ -143,19 +143,22 @@ for(var q7i = 0 ; q7i < 6 ; q7i++){
     for (var q7ArrayCompare = 0 ; q7ArrayCompare < (question7CorrectAnswer.length); q7ArrayCompare++){
       if (answer7 === (question7CorrectAnswer[q7ArrayCompare]).toLowerCase()){
         alert('You guessed right, congratulations! The correct answers were ' + question7CorrectAnswer + '.');
+        displayed += 7;
         userCorrectAnswerTotal++;
         q7broke = true;
       }
+      //else if they have guessed 6 times tell them the game is over
       else if(question7GuessCount > 6){
         alert('Sorry, you\'re out of guesses. The correct answers were ' + question7CorrectAnswer + '.');
+        q7i = 7;
       }
-      else{
+      else if(displayed < 1){
+        displayed++;
         alert('Sorry, you guessed wrong. Try again!');
       }
     }
   }
 }
-
 //This alert greets the user by name and lets them know how many questions out of the total they got correct
 
 alert('Thanks for playing my get-to-know-me game ' + userName + ', you got ' + userCorrectAnswerTotal + ' questions right out of 7.');
