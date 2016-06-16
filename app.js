@@ -152,10 +152,10 @@ for(var q7i = 0 ; q7i < 6 ; q7i++){
         alert('Sorry, you\'re out of guesses. The correct answers were ' + question7CorrectAnswer + '.');
         q7i = 7;
       }
-      else if(displayed < 1){
-        displayed++;
-        alert('Sorry, you guessed wrong. Try again!');
-      }
+      //else if(displayed < 1){
+      //  displayed++;
+      //  alert('Sorry, you guessed wrong. Try again!');
+      //}
     }
   }
 }

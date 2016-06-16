@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  color: #ff0000;
+  color: #990000;
 }
 
 h2 {
@@ -12,26 +12,16 @@ h2 {
 }
 
 header{
+  margin: 10px;
   background: #6699ff;
   height: 150px;
-}
-
-header p{
-  background: #6699ff;
-}
-
-header h1{
-  background: #6699ff;
+  padding: 30px;
+  border-radius: 50px;
 }
 
 section {
-  background: #8585ad;
-}
-
-section h2 {
-  background: #8585ad;
-}
-
-section p {
+  margin: 10px;
+  padding: 30px;
+  border-radius: 50px;
   background: #8585ad;
 }
